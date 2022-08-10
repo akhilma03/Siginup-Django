@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<style>
+  body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/001/987/924/non_2x/abstract-dark-grey-metallic-gold-light-luxury-design-modern-futuristic-background-illustration-vector.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+  </style>
+<div class="container-fluid">
+  <div class="row">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-2">
+    <a class="navbar-brand" href="#">CARTBIA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'ihome' %}">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="#">Welcome,{{ user.username }}</a>
+        
+        </li>
+      </ul>
+      
+       
+      <button class="btn btn-outline-success my-2 my-sm-0  position-absolute top-0 start-50        
+ bg-dark d-flex justify-content-end"    type="submit"> <a class="text-decoration-none d-flex justify-content-end " href=" {% url 'ilogout' %}"> Logout</button></a>
+      </form>
+    </div>
+
+  </nav>
+
+<section>
+<div class="container">
+  <div class="row d-flex justify-content-center ">
+    <h2 class="text-center mt-2 text-white  fw-bold ">Welome Alliens To the World of Cartbia</h2>
+
+
+  <div class="card a d-flex mt-3" style="width: 22rem;">
+    <p class="card-text"><h3>Allien Id {{user.id}}</h3></p>
+    <img class="card-img-top" src="https://previews.123rf.com/images/jemastock/jemastock1609/jemastock160906922/63284308-boy-cartoon-student-zur%C3%BCck-in-der-schule-bildung-und-kindheit-thema-bunte-design-vektor-illustration.jpg" alt="Card image cap">
+    <div class="card-body">
+ 
+      <p class="card-text"><h4> Name : {{user.first_name}} {{user.last_name}}</h4></p>
+      
+      <p class="card-text"><h4> Email :  {{user.email}}</h4> </p>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+</div>
+</div>
+    
+{% endblock %}
